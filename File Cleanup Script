@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Define the directory to clean up
+cleanup_dir="/path/to/cleanup"
+
+# Remove all files older than 30 days
+find "$cleanup_dir" -type f -mtime +30 -exec rm {} \;
+
+echo "Cleanup completed."
+
