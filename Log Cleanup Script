@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Define log directory and maximum log age (in days)
+log_dir="/path/to/logs"
+max_age_days=30
+
+# Find and remove logs older than max_age_days
+find "$log_dir" -type f -name "*.log" -mtime "+$max_age_days" -delete
+
+echo "Log cleanup completed."
