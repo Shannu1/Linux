@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Define the repository directory and commit message
+repo_dir="/path/to/git/repository"
+commit_msg="Automated commit: $(date)"
+
+# Change to the repository directory
+cd "$repo_dir" || exit
+
+# Add all changes, commit, and push to remote repository
+git add .
+git commit -m "$commit_msg"
+git push origin master
+
+echo "Git commit and push completed."
