@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check CPU usage
+cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
+echo "CPU Usage: $cpu_usage%"
+
+# Check available memory
+memory=$(free -m | grep "Mem:" | awk '{print $4}')
+echo "Available Memory: ${memory}MB"
+
+# Check disk usage
+disk_usage=$(df -h | grep "/dev/sda1" | awk '{print $5}')
+echo "Disk Usage: $disk_usage"
+
+# Check system uptime
+uptime=$(uptime -p)
+echo "System Uptime: $uptime"
