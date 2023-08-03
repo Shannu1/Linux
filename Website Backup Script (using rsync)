@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Define source and destination directories
+source_dir="/var/www/html"  # Your website root directory
+backup_dir="/path/to/backup"
+
+# Run the rsync command to sync files to the backup directory
+rsync -av --delete "$source_dir" "$backup_dir"
+
+echo "Backup completed."
+
