@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Define the server URL to monitor
+server_url="https://example.com"
+
+# Send a GET request to the server and check the response status
+response=$(curl -s -o /dev/null -w "%{http_code}" "$server_url")
+
+if [ "$response" -eq 200 ]; then
+  echo "Server is online. Response code: $response"
+else
+  echo "Server is down. Response code: $response"
+  # Add logic here to send an email notification or take other actions
+fi
